@@ -1,11 +1,27 @@
 // Iteration 1
 // 1. Create an array of strings
+let todos: string[] = [];
 
 // 2. Create a function to add a task in to the array, call it `addTask`, the function has to accept a string and don't have to return anything.
+function addTask(task: string): number {
+  todos.push(task);
+  console.log('=========== NEW TASK ===========');
+  console.log(`Task "${task}" inserted in the list`);
+
+  return todos.length;
+}
 
 // 3. Create a function to list all tasks, it must show in the console de task.
+function listAllTasks() {
+  todos.forEach((task, index) => {
+    console.log(`${index + 1}: ${task}`);
+  });
+}
 
 // 4. Create a function to delete a task, you must find the task inside the array and delete it.
+function deleteTask(taskToDelete) {
+  todos = todos.filter((task) => { return task !== taskToDelete});
+}
 
 // Execution
 console.log("Number of items:", addTask('This is our first task'));
